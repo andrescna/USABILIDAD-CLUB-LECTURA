@@ -1,2 +1,83 @@
 
-Stub, info en docs/practicas/practica 1/informe-p1.md
+Práctica 1: Introducción al protocolo HTTP
+
+Web 1: http://www.gobiernodecanarias.org/istac/api/
+
+Hemos analizado esta web con las herramientas de depuración de Chrome
+
+-¿Qué peticiones desencadena la consulta.
+Desencadena distintas peticiones, en concreto 3 peticiones HTML, 2 stylesheet, y 2 de tipo jpeg. 
+
+¿Qué tipo de petición estás realizando?
+Las peticiones que realiza son de tipo GET todas y cada una de las mencionadas anteriormente
+
+¿Qué código de estatus devuelve?
+Devuelve dos tipo de código de estatus distintos, el 200 (OK) y el 302 (Found) [Que el contenido está siendo leído desde la caché y no se ha modificado desde la última vez que se descargó desde el servidor
+
+¿Qué DNS tiene el servidor?
+http://www.gobiernodecanarias.org/istac/api
+
+¿Qué IP tiene tiene el servidor?
+El servidor tiene la IP 93.188.137.123:80
+
+¿La página tiene alguna cookie?, ¿Cuáles?.
+La página tiene dos cookies: 
+_ga con valor GA1.2.16266476.1550141840
+_gid con valor GA1.2.1294216735.1550141840
+
+¿Qué idioma acepta?.
+Accept-Language:
+es-ES,es;q=0.9
+Es decir, el idioma que acepta es Español
+
+¿Alguna línea de código JavaScript?
+En este caso la web no contiene código JavaScript
+
+¿Alguna línea de código CSS que se aplique?
+El fichero CSS al que se hace referencia es /istac/resources/css/istac.css. Como ejemplo podemos ver la cabecera del fichero y el estilo del elemento top
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+.top {
+    /* width: 100%; */
+    border-bottom: 2px solid rgb(214, 214, 214);
+    padding: 0px 4px 8px 0px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+¿Alguna línea de código HTML que se aplique?
+Todo el código de la página index.html en este caso es HTML, así que por ejemplo podemos ver la cabecera de la web, donde se encuentra el título y el enlace a la hoja de estilos
+<html>
+    <head>
+        <title>ISTAC | API | eDatos</title>
+        <link href="/istac/resources/css/istac.css" media='screen' rel='stylesheet' type='text/css' />
+    </head>
+
+Web 2: https://www3.gobiernodecanarias.org/istac/api/operations/v1.0/operations?limit=5
+
+Esta página web la hemos analizado con las herramientas proporcionadas por el navegador Firefox, obteniendo como resultados:
+
+¿Qué peticiones desencadena la consulta?
+Desencadena únicamente otra petición, la cual es de tipo GET y solicita un elemento de tipo imagen.
+
+¿Qué tipo de petición estás realizando?
+Se está realizando una petición de tipo GET.
+
+¿Qué código de estatus devuelve?
+En este caso, devuelve el código de estado 200, el cual quiere decir que no ha habido ningún problema y que todo está correcto. En el caso de la petición desencadhttps://github.com/andrescna/USABILIDAD-CLUB-LECTURA/blob/master/HTTP_ReadMeenada, el código que devuelve es el 404, el cual significa que no se ha encontrado el elemento al que se le ha realizado la petición.
+
+¿Qué DNS tiene el servidor?
+https://www3.gobiernodecanarias.org/istac/api/operations/v1.0/operations?limit=5
+
+¿Qué IP tiene tiene el servidor?
+ El servidor tiene la IP 93.188.137.126
+ 
+¿La página tiene alguna cookie?, ¿Cuáles?.
+La página sí contiene cookies, las cuales son:
+_ga: GA1.2.1582986043.1550138171
+_gid: GA1.2.562600567.1550138171
+
+¿Qué idioma acepta?.
+El idioma que se acepta lo podemos comprobar en el valor Accept-Language, el cual nos indica que es el español, el inglés de Estados Unidos y el inglés habitual o de Gran Bretaña, puesto a que el contenido de este atributo es: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3
+
+¿Alguna línea de código JavaScript, CSS o HTML que se aplique?
+No hemos encontrado ninguna línea de estos lenguajes, solo hemos encontrado contenido en XML, incluso el propio navegador nos avisa en la parte superior de la pantalla sobre que no hay ninguna información de estilo asociada. Por otra parte, en la petición desencadenada, la cual hemos mencionado anteriormente y no es capaz de encontrar, se hace petición tipo html, aunque no hay respuesta puesto que el servidor no es capaz de encontrar nada.
