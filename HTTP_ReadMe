@@ -8,8 +8,6 @@ Hemos analizado esta web con las herramientas de depuración de Chrome
 -¿Qué peticiones desencadena la consulta.
 Desencadena distintas peticiones, en concreto 3 peticiones HTML, 2 stylesheet, y 2 de tipo jpeg.
 
-![cuadro_http](https://user-images.githubusercontent.com/44870064/53156484-6ae21700-35b7-11e9-9adf-16f1acf3018a.png)
-
 ¿Qué tipo de petición estás realizando?
 Las peticiones que realiza son de tipo GET todas y cada una de las mencionadas anteriormente
 
