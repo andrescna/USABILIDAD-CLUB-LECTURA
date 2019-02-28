@@ -4,9 +4,9 @@ Este repositorio contiene la documentación y código de la práctica de Usabili
 
 ## Integrantes del grupo
 
-alu0100600216 — Andrés Concepción Afonso
-alu0101018300 — Adrián Ramos Mejía
-alu0101024103 — Brian Samir Santamaría Valero
+alu0100600216 — Andrés Concepción Afonso  
+alu0101018300 — Adrián Ramos Mejía  
+alu0101024103 — Brian Samir Santamaría Valero  
 alu0101046853 — Chesen Castilla Gil
 
 ## Documentación
