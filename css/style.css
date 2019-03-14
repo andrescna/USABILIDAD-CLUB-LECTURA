@@ -1,0 +1,69 @@
+body{
+    width: 770px;
+    font-family: Arial;
+    font-size: 1.5em;
+    color: black;
+}
+
+a:hover {
+    color:red;
+}
+
+a:visited{
+    color: darkblue;
+    /* No se puede cambiar la fuente de los enlaces visitados, por seguridad los navegadores no lo admiten 
+    https://www.w3schools.com/cssreF/sel_visited.asp */
+    font-family: Verdana, sans-serif;
+}
+
+table a:link {
+    color: green;
+}
+
+p {
+    margin-top: 0.5em
+}
+
+header{
+    height: 100px;
+    background-color: lightgray;
+    background-image: url("/media/img/cabecera.jpg");
+}
+
+.navbar {
+    list-style-type: none;
+}
+
+.navbar li{
+    float: left;
+    padding: 0.3em;
+    margin-bottom: 0.7em;
+}
+
+.navbar a{
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    background-color: lightcoral;
+}
+
+.column{
+    float: left;
+}
+.secondary-content{
+    width: 200px;
+}
+.main-text{
+    width: 330px;
+}
+.link-section{
+    width: 200px;
+}
+
+.footer{
+    background-color: aqua;
+
+}
+
+

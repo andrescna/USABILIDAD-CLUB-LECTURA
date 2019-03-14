@@ -1,71 +1,88 @@
-<!doctype html>
+<!doctype <!DOCTYPE html>
 <html>
 <head>
-<title> Club de Lectura </title>
-<meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Practica CSS</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<h1>Club de Lectura</h1>
-<h2>Bienvenidos</h2>
-<p>En esta página podrá sumergerse <br> en el mundo de la <strong>literatura</strong></p>
-<p><abbr><em>"La literatura es siempre una expedición a la verdad."</em> Franz Kafka </abbr></p>
-<a href="index.html" name="grupolectura"><img src="https://universoabiertoblog.files.wordpress.com/2016/06/27240217110_3c14d1955b_b_d.jpg?w=498&h=270"/></a>
-<h3>Top ventas Febrero 2019</h3>
-<ol>
-  <li>Toda la verdad de mis mentiras <em>(Elísabet Benavent)</em></li>
-  <li>Manual de resistencia <em>(Pedro Sánchez)</em> </li>
-  <li>El chico de las mil almas <em>(María Herrejón)</em> </li>
-  <li>Los asquerosos <em>(Santiago Lorenzo)</em> </li>
-  <li>Diccionario de las cosas que no supe explicarte <em>(Risto Mejide)</em> </li>
-</ol>
-<h3>Mejores Valorados</h3>
-<ul>
-  <li>La muerte del comendador-Libro 2 <em>(Haruki Murakami)</em> </li>
-  <li>Afectos secundarios <em>(Fátima Casaseca)</em> </li>
-  <li>Una vida que no es mía <em>(Olivia Sudjic)</em> </li>
-  <li>El baile del reloj <em>(Anne Tyler)</em> </li>
-  <li>La isla de los conejos <em>(Elvira Navarro)</em> </li>
-</ul>
-<h3>Recomendaciones de hoy </h3>
-<table>
-  <tr>
-    <td>Libro</td>
-    <td>Autor</td>
-    <td>PVP estimado</td>
-  </tr>
-  <tr>
-    <td>Carvalho: problemas de identidad</td>
-    <td>Carlos Zanón</td>
-    <td>19,00€</td>
-  </tr>
-  <tr>
-    <td>El aliado</td>
-    <td>Iván Repila</td>
-    <td>18,50€</td>
-  </tr>
-  <tr>
-    <td>El abrazo del monstruo</td>
-    <td>Félix J. Palma</td>
-    <td>20,00€</td>
-  </tr>
-</table>
-<br>
-<h3>Unete al club de lectura</h3>
-<form>
-  Subscribete a nuestro boletín de noticias(correo electronico):
-  <br>
-  <input type="text" name="email" value="xxx@xxx.xxx"/>
-  <br>
-  Genero Favorito:
-  <br>
-  <select>
-<option> Novelas Romanticas </option>
-<option> Suspense </option>
-<option> Aventuras </option>
-<option> Fantasia </option>
-<option> Comics </option>
-</select>
-<br>
-  <input type="submit" value="Enviar"/>
+    
+    <header>
+        <ul class="navbar">
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Novedades</a></li>
+            <li><a href="">Tienda</a></li>
+            <li><a href="">Ayuda</a></li>
+        </ul>
+
+    </header>
+
+    <div class="row">
+        
+        <div class="column secondary-content">
+                <p> Lista de los libros mejor valorados durante el último mes:</p>
+                <ul>
+                    <li>La muerte del comendador</li>
+                    <li>Afectos secundarios</li>
+                    <li>Una vida que no es mía</li>
+                    <li>El baile del reloj</li>
+                    <li>La isla de los conejos</li>
+                </ul>
+                <a href="http://amazon.es">Amazon</a> <br>
+                <a href="http://www.casadellibro.com">Casa del Libro</a>
+        </div>
+
+        <div class="column main-text">
+                <h2>Bienvenidos</h2>
+
+                <p>En esta página podrá sumergerse en el mundo de la literatura <br>
+                <em>"La literatura es siempre una expedición a la verdad." Franz Kafka </em>
+                </p>
+
+                <h2>Próximas lecturas</h2>
+                <p>Libros a comentar durante el próximo mes y enlaces para poder adquirirlos:</p>
+                <table>
+                     <tr>
+                        <td>Libro</td>
+                        <td>Autor</td>
+                        <td>Enlace de compra</td>
+                    </tr>
+                    <tr>
+                        <td>Carvalho: problemas de identidad</td>
+                        <td>Carlos Zanón</td>
+                        <td><a href="https://www.planetadelibros.com/libro-carvalho-problemas-de-identidad/283950">Comprar</a></td>
+                    </tr>
+                        <tr>
+                        <td>El aliado</td>
+                        <td>Iván Repila</td>
+                        <td><a href="https://www.planetadelibros.com/libro-el-aliado/287571#soporte/287571">Comprar</a></td>
+                    </tr>
+                    <tr>
+                        <td>El abrazo del monstruo</td>
+                        <td>Félix J. Palma</td>
+                        <td><a href="https://www.planetadelibros.com/libro-el-abrazo-del-monstruo/283261">Comprar</a></td>
+                    </tr>
+                </table>
+
+                <h2> Saludos </h2>
+
+                <p> Te animamos a que te unas, para poder descubrir un sinfín de autores y obras de gran calidad </p>
+                <img src="media/img/club_lectura.jpg"> </img>
+        </div>
+
+        <div class="column link-section">
+            <p>Tiendas de libros online</p>
+            <a href="http://www.planetadelibros.es">Planeta de Libros</a><br>
+            <a href="http://www.casadellibro.es">Casa del Libro</a><br>
+            <a href="http://www.amazon.es">Amazon</a> <br>
+            <a href="http://www.agapea.com">Agapea</a>
+        </div>
+
+    </div>
+
+    <footer>
+        
+    </footer>
 </body>
 </html>
