@@ -3,51 +3,88 @@
 <head>
     <meta charset="utf-8">
     <title>Practica CSS</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
+<header>
+  <div class="row">
+     <div class="col l12 center-align blue-grey darken-4">
+       <h1 class="white-text">Club de Lectura</h1>
+</div>
+</div>
 
+ <nav class="blue-grey darken-4">
+   <div class="nav-wrapper">
+     <a href="#" class="brand-logo"><i class="material-icons">book</i></a>
+   <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <li><a href="">Inicio</a></li>
+       <li><a href="">Novedades</a></li>
+       <li><a href="">Tienda</a></li>
+       <li><a href="">Ayuda</a></li>
+   </ul>
+ </div>
+ </nav>
+</header>
 <body>
-    
-    <header>
-        <ul class="navbar">
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Novedades</a></li>
-            <li><a href="">Tienda</a></li>
-            <li><a href="">Ayuda</a></li>
-        </ul>
-
-    </header>
+ <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <div class="row">
-        
-        <div class="column secondary-content">
-                <p> Lista de los libros mejor valorados durante el último mes:</p>
-                <ul>
-                    <li>La muerte del comendador</li>
-                    <li>Afectos secundarios</li>
-                    <li>Una vida que no es mía</li>
-                    <li>El baile del reloj</li>
-                    <li>La isla de los conejos</li>
-                </ul>
-                <a href="http://amazon.es">Amazon</a> <br>
-                <a href="http://www.casadellibro.com">Casa del Libro</a>
+        <div class="col l3 center-align">
+          <h3> Lista de los libros mejor valorados durante el último mes:</h3>
+          <ul class="collection">
+            <li class="collection-item avatar">
+              <img src="https://www.planetadelibros.com/usuaris/libros/fotos/274/m_libros/portada_la-muerte-del-comendador-libro-1_haruki-murakami_201807031201.jpg" alt="" class="circle">
+              <span class="title">La muerte del comendador</span>
+              <p>Haruki Murakami</p>
+              <a href="https://www.planetadelibros.com/libro-la-muerte-del-comendador-libro-1/273020" class="secondary-content"><i class="material-icons">shop</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <img src="https://static.fnac-static.com/multimedia/Images/ES/NR/5a/19/4a/4856154/1545-1.jpg" alt="" class="circle">
+              <span class="title">Afectos secundarios</span>
+              <p>Fátima Casaseca</p>
+              <a href="https://www.planetadelibros.com/libro-afectos-secundarios/274336" class="secondary-content"><i class="material-icons">shop</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <img src="https://2.bp.blogspot.com/-i2j1ijsDRSk/XDXEpywbHpI/AAAAAAAAStQ/oBasKHRmYvAb2-KvNeofDSnyVcC-DV-OQCLcBGAs/w1200-h630-p-k-no-nu/portada_una-vida-que-no-es-mia_olivia-sudjic_201811061220.jpg" alt="" class="circle">
+              <span class="title">Una vida que no es mía</span>
+              <p>Olivia Sudjic</p>
+              <a href="https://www.planetadelibros.com/libro-una-vida-que-no-es-mia/287138" class="secondary-content"><i class="material-icons">shop</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <img src="https://static.fnac-static.com/multimedia/Images/ES/NR/e2/97/49/4823010/1540-1.jpg" alt="" class="circle">
+              <span class="title">El baile del reloj</span>
+              <p>Anne Tyler</p>
+              <a href="https://www.casadellibro.com/libro-el-baile-del-reloj/9788426405746/8703876" class="secondary-content"><i class="material-icons">shop</i></a>
+            </li>
+          </ul>
+                  <div class="collection">
+                <a href="http://amazon.es" class="collection-item grey lighten-2">Amazon</a>
+                <a href="http://www.casadellibro.com" class="collection-item grey lighten-2">Casa del Libro</a>
+                  </div>
         </div>
 
-        <div class="column main-text">
-                <h2>Bienvenidos</h2>
+        <div class="col l6 center-align">
+                <h2 >Bienvenidos</h2>
 
-                <p>En esta página podrá sumergerse en el mundo de la literatura <br>
-                <em>"La literatura es siempre una expedición a la verdad." Franz Kafka </em>
-                </p>
+                <p >En esta página podrá sumergerse en el mundo de la literatura. <br>
+                <strong><em>"La literatura es siempre una expedición a la verdad." Franz Kafka </em></strong>
+              </p>
 
-                <h2>Próximas lecturas</h2>
-                <p>Libros a comentar durante el próximo mes y enlaces para poder adquirirlos. Preferiblemente en <a href="http://www.agapea.com">nuestro afiliado</a></p>
-                <table>
-                     <tr>
-                        <td>Libro</td>
-                        <td>Autor</td>
-                        <td>Enlace de compra</td>
-                    </tr>
+                <h2 >Próximas lecturas</h2>
+                <p >Libros a comentar durante el próximo mes y enlaces para poder adquirirlos. Preferiblemente en <a href="http://www.agapea.com">nuestro afiliado</a></p>
+                <table class="striped">
+                     <thead>
+                       <tr>
+                        <th>Libro</th>
+                        <th>Autor</th>
+                        <th>Enlace de compra</th>
+                      </tr>
+                    </thead>
                     <tr>
                         <td>Carvalho: problemas de identidad</td>
                         <td>Carlos Zanón</td>
@@ -65,24 +102,36 @@
                     </tr>
                 </table>
 
-                <h2> Saludos </h2>
-
-                <p> Te animamos a que te unas, para poder descubrir un sinfín de autores y obras de gran calidad </p>
-                <img src="media/img/club_lectura.jpg"> </img>
         </div>
 
-        <div class="column link-section">
+        <div class="col l3 center-align">
             <p>Tiendas de libros online:</p>
-            <a href="http://www.planetadelibros.es">Planeta de Libros</a><br>
-            <a href="http://www.casadellibro.es">Casa del Libro</a><br>
-            <a href="http://www.amazon.es">Amazon</a> <br>
-            <a href="http://www.agapea.com">Agapea</a>
+            <div class="collection">
+            <a href="http://www.planetadelibros.es" class="collection-item grey lighten-2">Planeta de Libros</a>
+            <a href="http://www.casadellibro.es" class="collection-item grey lighten-2">Casa del Libro</a>
+            <a href="http://www.amazon.es" class="collection-item grey lighten-2">Amazon</a>
+            <a href="http://www.agapea.com" class="collection-item grey lighten-2">Agapea</a>
+          </div>
+          <img src="media/img/club_lectura.jpg"/>
         </div>
 
     </div>
 
-    <footer>
-        
-    </footer>
+    <footer class="page-footer blue-grey darken-4">
+             <div class="container">
+               <div class="row">
+                 <div class="col l6 s12">
+                   <h5 >Club de Lectura</h5>
+                   <p> Contacta con nosotros: <br> clubdelectura@gmail.com </p>
+                 </div>
+                 <div class="col l4 offset-l2 s12">
+                   <h5 >Enlaces RRSS</h5>
+                     <a class="grey-text text-lighten-3" href="https://www.instagram.com/tuputamadre"><img src="https://img.icons8.com/dusk/48/000000/instagram.png"/></a>
+                     <a class="grey-text text-lighten-3" href="https://www.twitter.com/tuputamadre"><img src="https://img.icons8.com/dusk/48/000000/twitter.png"/></a>
+                     <a class="grey-text text-lighten-3" href="https://www.facebook.com/tuputamadre"><img src="https://img.icons8.com/dusk/48/000000/facebook.png"/></a>
+                 </div>
+               </div>
+             </div>
+           </footer>
 </body>
 </html>
