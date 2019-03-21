@@ -1,0 +1,32 @@
+{
+    "Papas": {
+        "peso": "10",
+        "precio": "8.60"
+    },
+
+    "Zanahorias": {
+        "peso": "2.50",
+        "precio": "3.90"
+    },
+
+    "Tomates": {
+        "peso": "1.75",
+        "precio": "1.60"
+    },
+
+    "Lechugas": {
+        "peso": "1.5",
+        "precio": "1.00"
+     },
+
+    "Fresas": {
+        "peso": "0.40",
+        "precio": "4.20"
+    },
+
+    "Pimientos": {
+        "peso": "1.5",
+        "precio": "3.68"
+    }
+
+}
