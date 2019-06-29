@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Club de Lectura</title>
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen"/>
+      <link type="text/css" rel="stylesheet" href="css/style.css" />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script>
+        //Script de Google optimize
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   gtag('config', 'UA-140744498-1',{'optimize_id': 'GTM-KN3KK52'});
+   gtag('config', 'UA-140744498-2');
+ </script>
+      <script>
+        (function($){
+  $(function(){
+
+    $('.sidenav').sidenav();
+
+  }); // end of document ready
+})(jQuery); // end of jQuery name space
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDOYi7r6AKVPRph1QfgdePitFZ4C-DqBow",
+            authDomain: "uya19-ea8ab.firebaseapp.com",
+            databaseURL: "https://uya19-ea8ab.firebaseio.com",
+            projectId: "uya19-ea8ab",
+            storageBucket: "uya19-ea8ab.appspot.com",
+            messagingSenderId: "415642549569"
+          };
+          firebase.initializeApp(config);
+          var database = firebase.database();
+          var authService = firebase.auth();
+        //funcion de cerrar cesion
+          function cerrar(){
+            authService.signOut().then(function() {
+      location.reload();
+    }).catch(function(error) {
+      // An error happened.
+    });
+    }
+    //Comprobacion de si hay un usuario logeado para mostrar los distintos botones del menu
+    authService.onAuthStateChanged(function(user) {
+      if (user) {
+        console.log('AuthStateChanged', user)
+        document.getElementById('iniciar').style.display = 'none';
+        document.getElementById('registrar').style.display = 'none';
+        document.getElementById('iniciar2').style.display = 'none';
+        document.getElementById('registrar2').style.display = 'none';
+
+      } else {
+
+        document.getElementById('logout').style.display = 'none';
+        document.getElementById('insertar').style.display = 'none';
+        document.getElementById('libros').style.display = 'none';
+        document.getElementById('buscar').style.display = 'none';
+        document.getElementById('logout2').style.display = 'none';
+        document.getElementById('insertar2').style.display = 'none';
+        document.getElementById('libros2').style.display = 'none';
+        document.getElementById('buscar2').style.display = 'none';
+      }
+    });
+
+          </script>
+</head>
+<body>
+<header>
+  <div class="row">
+     <div class="col l12 s12 center-align blue-grey darken-4">
+       <h1 class="white-text">Club de Lectura</h1>
+         <nav>
+            <div class="nav-wrapper blue-grey darken-4">
+           <ul class="left hide-on-med-and-down">
+           <li><a href="index.html" id="index">Inicio</a></li>
+           <li><a href="insertar.html" id="insertar">Insertar Libros</a></li>
+           <li><a href="mislibros.html" id="libros">Mis Libros</a></li>
+           <li><a href="registrar.html" id="registrar">Registrarse</a></li>
+           <li><a href="iniciar.html" id="iniciar">Iniciar Sesión</a></li>
+           <li><a href="recomendaciones.html" id="buscar">Recomendaciones</a></li>
+           <li><a href="sugerencias.html" id="sugerencias">Sugerencias</a></li>
+           <li><a href="javascript:void(0);" onclick="cerrar()" id="logout">Cerrar Sesion</a></li>
+          </ul>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+  <ul class="sidenav hide-on-large-only" id="mobile-demo">
+    <li><a href="index.html" id="index2">Inicio</a></li>
+    <li><a href="insertar.html" id="insertar2">Insertar Libros</a></li>
+    <li><a href="mislibros.html" id="libros2">Mis Libros</a></li>
+    <li><a href="registrar.html" id="registrar2">Registrarse</a></li>
+    <li><a href="iniciar.html" id="iniciar2">Iniciar Sesión</a></li>
+    <li><a href="recomendaciones.html" id="buscar2">Recomendaciones</a></li>
+    <li><a href="sugerencias.html" id="sugerencias2">Sugerencias</a></li>
+    <li><a href="javascript:void(0);" onclick="cerrar()" id="logout2">Cerrar Sesion</a></li>
+  </ul>
+
+
+</div>
+</div>
+</header>
+
+
+<main>
+    <div class="row">
+        <div class="col l3 m12 s12 center-align">
+          <h3> Lista de los libros mejor valorados durante el último mes:</h3>
+          <ul class="collection">
+            <li class="collection-item avatar">
+              <img src="https://www.planetadelibros.com/usuaris/libros/fotos/274/m_libros/portada_la-muerte-del-comendador-libro-1_haruki-murakami_201807031201.jpg" alt="" class="circle">
+              <span class="title" id="libro1">La muerte del comendador</span>
+              <p>Haruki Murakami</p>
+            </li>
+            <li class="collection-item avatar">
+              <img src="https://static.fnac-static.com/multimedia/Images/ES/NR/5a/19/4a/4856154/1545-1.jpg" alt="" class="circle">
+              <span class="title" id="libro2">Afectos secundarios</span>
+              <p>Fátima Casaseca</p>
+            </li>
+            <li class="collection-item avatar">
+              <img src="https://2.bp.blogspot.com/-i2j1ijsDRSk/XDXEpywbHpI/AAAAAAAAStQ/oBasKHRmYvAb2-KvNeofDSnyVcC-DV-OQCLcBGAs/w1200-h630-p-k-no-nu/portada_una-vida-que-no-es-mia_olivia-sudjic_201811061220.jpg" alt="" class="circle">
+              <span class="title" id="libro3">Una vida que no es mía</span>
+              <p>Olivia Sudjic</p>
+            </li>
+            <li class="collection-item avatar">
+              <img src="https://static.fnac-static.com/multimedia/Images/ES/NR/e2/97/49/4823010/1540-1.jpg" alt="" class="circle">
+              <span class="title" id="libro4">El baile del reloj</span>
+              <p>Anne Tyler</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col l6 m12 s12 center-align">
+          <div class="hide-on-med-and-down">
+                <h2>¡Bienvenidos!</h2>
+                <p ><strong>Para acceder a nuestros sevicios necesita registrarse(Si ya lo está iniciar sesion)</strong><br>
+                <em>"La literatura es siempre una expedición a la verdad." Franz Kafka </em>
+              </p>
+            </div>
+                <h2>Próximas lecturas</h2>
+                <p>Libros a comentar durante el próximo mes y enlaces para poder adquirirlos. Preferiblemente en nuestro afiliado</p>
+                <table class="border">
+                     <thead>
+                       <tr>
+                        <th>Libro</th>
+                        <th>Autor</th>
+                        <th>Enlace de compra</th>
+                      </tr>
+                    </thead>
+                    <tr>
+                        <td id="identidad">Carvalho: problemas de identidad</td>
+                        <td>Carlos Zanón</td>
+                        <td><a href="https://www.planetadelibros.com/libro-carvalho-problemas-de-identidad/283950" aria-labelledby="identidad">Enlace Comprar</a></td>
+                    </tr>
+                        <tr>
+                        <td id="aliado">El aliado</td>
+                        <td>Iván Repila</td>
+                        <td><a href="https://www.planetadelibros.com/libro-el-aliado/287571#soporte/287571" aria-labelledby="aliado">Enlace Comprar</a></td>
+                    </tr>
+                    <tr>
+                        <td id="abrazo">El abrazo del monstruo</td>
+                        <td>Félix J. Palma</td>
+                        <td><a href="https://www.planetadelibros.com/libro-el-abrazo-del-monstruo/283261" aria-labelledby="abrazo">Enlace Comprar</a></td>
+                    </tr>
+                </table>
+
+        </div>
+
+        <div class="col l3 m12 s12 center-align">
+            <h3>Recomendacion de la semana del usuario Ramón:</h3>
+            <img id="imagenlibrousu" src="https://http2.mlstatic.com/libro-la-monja-espinosa-jimenez-julio-mario--D_NQ_NP_852796-MLA28732984133_112018-O.jpg" alt="" /><br>
+            <p class="title center-align" id="librorecomendado">"La monja" de Julio Mario Espinosa<br>Valoracion de Ramón: 9</p>
+            <h4>Enlaces de compra de nuestros afiliados</h4>
+            <div class="collection">
+            <a href="http://www.planetadelibros.com" class="collection-item grey lighten-2" aria-labelledby="librorecomendado"><p>Planeta de Libros</p></a>
+            <a href="http://www.casadellibro.es" class="collection-item grey lighten-2"><p>Casa del Libro</p></a>
+          </div>
+        </div>
+
+    </div>
+</main>
+    <footer class="page-footer blue-grey darken-4">
+             <div class="container">
+               <div class="row">
+                 <div class="col l4 s12 center-align">
+                   <p>Club de Lectura</p>
+                   <p> Contacta con nosotros: <br> clubdelectura@gmail.com </p>
+                 </div>
+                 <div class="col l4 s12 center-align">
+                   <p>Enlaces RRSS</p>
+                     <a class="grey-text text-lighten-3" href="https://www.instagram.com/"><img src="https://img.icons8.com/dusk/48/000000/instagram.png" alt="instagram"/></a>
+                     <a class="grey-text text-lighten-3" href="https://www.twitter.com/"><img src="https://img.icons8.com/dusk/48/000000/twitter.png" alt="twitter"/></a>
+                     <a class="grey-text text-lighten-3" href="https://www.facebook.com/"><img src="https://img.icons8.com/dusk/48/000000/facebook.png" alt="facebook"/></a>
+                 </div>
+                 <div class="col l4 s12 center-align">
+                   <p>Sobre Nosotros<br>Esta pagina esta enfocada en ser una red social para lectores donde los usuarios compartan sus libros preferidos</p>
+                 </div>
+               </div>
+             </div>
+           </footer>
+           <script src="js/materialize.min.js"></script>
+           <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</body>
+</html>

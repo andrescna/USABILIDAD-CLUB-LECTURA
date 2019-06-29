@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>Club de Lectura</title>
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen"/>
+      <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+       <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-140744498-1',{'optimize_id': 'GTM-KN3KK52'});
+   gtag('config', 'UA-140744498-2');
+   (function($){
+$(function(){
+
+$('.sidenav').sidenav();
+$('.parallax').parallax();
+
+}); // end of document ready
+})(jQuery); // end of jQuery name space
+ </script>
+       <script>
+         // Initialize Firebase
+         var config = {
+           apiKey: "AIzaSyDOYi7r6AKVPRph1QfgdePitFZ4C-DqBow",
+           authDomain: "uya19-ea8ab.firebaseapp.com",
+           databaseURL: "https://uya19-ea8ab.firebaseio.com",
+           projectId: "uya19-ea8ab",
+           storageBucket: "uya19-ea8ab.appspot.com",
+           messagingSenderId: "415642549569"
+         };
+         firebase.initializeApp(config);
+         var authService = firebase.auth();
+         //funcion para iniciar sesion con firebase y su respectivo mensaje de error en caso de fallo
+       authService.onAuthStateChanged(function(user) {
+         if (user) {
+           document.getElementById('iniciar').style.display = 'none';
+           document.getElementById('registrar').style.display = 'none';
+           document.getElementById('iniciar2').style.display = 'none';
+           document.getElementById('registrar2').style.display = 'none';
+         } else {
+           document.getElementById('logout').style.display = 'none';
+           document.getElementById('insertar').style.display = 'none';
+           document.getElementById('libros').style.display = 'none';
+           document.getElementById('buscar').style.display = 'none';
+           document.getElementById('logout2').style.display = 'none';
+           document.getElementById('insertar2').style.display = 'none';
+           document.getElementById('libros2').style.display = 'none';
+           document.getElementById('buscar2').style.display = 'none';
+         }
+       });
+
+       </script>
+       <script>
+         function cerrar(){
+           authService.signOut().then(function() {
+     location.reload();
+   }).catch(function(error) {
+     // An error happened.
+   });
+   }
+
+   function enviarmen(){
+     mail('alu0101046853@ull.edu.es',document.getElementById("email_s").value,document.getElementById("mensaje_s").value);
+   }
+         </script>
+       </head>
+       <body>
+         <header>
+           <div class="row">
+              <div class="col l12 s12 center-align blue-grey darken-4">
+                <h1 class="white-text">Club de Lectura</h1>
+                  <nav>
+                     <div class="nav-wrapper blue-grey darken-4">
+                    <ul class="left hide-on-med-and-down">
+                    <li><a href="index.html" id="index">Inicio</a></li>
+                    <li><a href="insertar.html" id="insertar">Insertar Libros</a></li>
+                    <li><a href="mislibros.html" id="libros">Mis Libros</a></li>
+                    <li><a href="registrar.html" id="registrar">Registrarse</a></li>
+                    <li><a href="iniciar.html" id="iniciar">Iniciar Sesión</a></li>
+                    <li><a href="recomendaciones.html" id="buscar">Recomendaciones</a></li>
+                    <li><a href="sugerencias.html" id="sugerencias">Sugerencias</a></li>
+                    <li><a href="javascript:void(0);" onclick="cerrar()" id="logout">Cerrar Sesion</a></li>
+                   </ul>
+                   <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                 </div>
+               </nav>
+           <ul class="sidenav hide-on-large-only" id="mobile-demo">
+             <li><a href="index.html" id="index2">Inicio</a></li>
+             <li><a href="insertar.html" id="insertar2">Insertar Libros</a></li>
+             <li><a href="mislibros.html" id="libros2">Mis Libros</a></li>
+             <li><a href="registrar.html" id="registrar2">Registrarse</a></li>
+             <li><a href="iniciar.html" id="iniciar2">Iniciar Sesión</a></li>
+             <li><a href="recomendaciones.html" id="buscar2">Recomendaciones</a></li>
+             <li><a href="sugerencias.html" id="sugerencias2">Sugerencias</a></li>
+             <li><a href="javascript:void(0);" onclick="cerrar()" id="logout2">Cerrar Sesion</a></li>
+           </ul>
+
+
+         </div>
+         </div>
+         </header>
+       <main>
+         <div class="row" >
+         <div class="col l4 offset-l4 s12 center">
+           <h2>Sugerencias</h2>
+           <form action="https://formspree.io/alu0101046853@ull.edu.es"  method="post" encType="multipart/form-data">
+              <label>Correo(Requerido)<input type="text" name="correo" size="40" id ="email_s" aria-required="true" placeholder="Inserte su Correo electronico" required/></label>
+              <label>Nombre(Opcional)<input type="text" name="nombre" size="40" id ="nombre_s" placeholder="Inserte su Nombre"/></label>
+              <label>Mensaje(Requerido)<input type="text" name="mensaje" cols="30" rows="10" id ="mensaje_s" aria-required="true" placeholder="Inserte su Mensaje" required/></label>
+              <input type="submit" value="Enviar"/>
+            </form>
+         </div>
+         </div>
+       </main>
+         <footer class="page-footer blue-grey darken-4">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col l4 s12 center-align">
+                        <p>Club de Lectura</p>
+                        <p> Contacta con nosotros: <br> clubdelectura@gmail.com </p>
+                      </div>
+                      <div class="col l4 s12 center-align">
+                        <p>Enlaces RRSS</p>
+                          <a class="grey-text text-lighten-3" href="https://www.instagram.com/"><img src="https://img.icons8.com/dusk/48/000000/instagram.png" alt="instagram"/></a>
+                          <a class="grey-text text-lighten-3" href="https://www.twitter.com/"><img src="https://img.icons8.com/dusk/48/000000/twitter.png" alt="twitter"></a>
+                          <a class="grey-text text-lighten-3" href="https://www.facebook.com/"><img src="https://img.icons8.com/dusk/48/000000/facebook.png" alt="facebook"></a>
+                      </div>
+                      <div class="col l4 s12 center-align">
+                        <p>Sobre Nosotros<br>Esta pagina esta enfocada en ser una red social para lectores donde los usuarios compartan sus libros preferidos</p>
+                      </div>
+                    </div>
+                  </div>
+                </footer>
+                <script src="js/materialize.min.js"></script>
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        </body>
+</html>
